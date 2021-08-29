@@ -126,6 +126,10 @@ if selected_option == option2:
         # Image-text relation
         image_text_relation = st.radio('Image-text relation', ['None', 'Supporing', 'Need'], key="{}.9".format(img_id))
 
+        st.caption('None : The text and the image are not related at all, both stand completely on their own.')
+        st.caption('Supporting : The image text is supporting the text, but adds no or barely any further content. Imagine the text to be on a blank background – would there be a big/any difference? Or are there other possible interpretations of text that the image (at least partly) excludes?')
+        st.caption('Need : The interpretation of the text depends on that specific image – another or no image would allow for different interpretations.')
+
         # Translation
         #translation = st.text_area('Translation', key="{}.10".format(img_id))
 
@@ -207,6 +211,6 @@ if selected_option == option2:
             
         if st.button('Download your annotations as a CSV file'):
             st.markdown('<h5>Please send your annotations to this email address : abdelrahman.eldakrony@stud.uni-due.de</h5>', unsafe_allow_html=True)
-            tmp_download_link = download_link(session.annotations, 'annotations_' + str(datetime.now()) + '.csv', 'Click here to download your data!')
+            tmp_download_link = download_link(session.annotations, 'annotations1_' + str(datetime.now()) + '.csv', 'Click here to download your data!')
             st.markdown(tmp_download_link, unsafe_allow_html=True)
 
